@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: postgres:9.4
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+networks:
+  web:
+    driver: overlay
+volumes:
+  db-data:
