@@ -1,7 +1,11 @@
 version: "3"
 services:
   haproxy:
-    image: dockercloud/haproxy
+    build: ./
+    ports:
+      - 80:80
+    expose:
+      - 80
     depends_on:
       - awesome
     environment:
@@ -15,12 +19,6 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
-  logdna:
-        image: logdna/logspout:latest
-        volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        environment:
-        - LOGDNA_KEY=f9518ef4b413a048b6cc464c2498038b
 networks:
   web:
     driver: overlay
