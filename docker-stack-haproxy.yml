@@ -21,25 +21,6 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
         environment:
         - LOGDNA_KEY=f9518ef4b413a048b6cc464c2498038b
-  logspout:
-      image: gliderlabs/logspout:latest
-      networks:
-        - logging
-      volumes:
-        - /etc/hostname:/etc/host_hostname:ro
-        - /var/run/docker.sock:/var/run/docker.sock
-      command:
-        syslog://svt2-logger.am2.cloudra.local:514
-      deploy:
-        mode: global
-        resources:
-          limits:
-            cpus: '0.20'
-            memory: 256M
-          reservations:
-            cpus: '0.10'
-            memory: 128M
 networks:
   web:
     driver: overlay
-  logging:
