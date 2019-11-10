@@ -1,3 +1,3 @@
 # ClusterofSwarms
 
-This epository conatins code of DockerContianers Deployed using Swarm.
+This Repository contains code of Docker Contianers Deployed using Swarm.
