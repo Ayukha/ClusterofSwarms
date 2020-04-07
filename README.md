@@ -1,6 +1,6 @@
 # ClusterofSwarms
 
-This Repository contains code of Docker Containers Deployed using DockerSwarm.
+This Repository contains code of Docker Containers Deployed using DockerSwarm:
 
 It contains 5 services:
 
